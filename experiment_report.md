@@ -1,8 +1,8 @@
 # Experiment Report: Data Quality Impact on AI Agent
 
-**Student ID:** AI20K-XXXX
-**Name:** (Dien ten cua ban)
-**Date:** (Dien ngay thuc hien)
+**Student ID:** 2A202600550
+**Name:** Pham Minh Hieu
+**Date:** 2024-05-20
 
 ---
 
@@ -12,8 +12,8 @@ Chay `agent_simulation.py` voi 2 bo du lieu va ghi lai ket qua:
 
 | Scenario | Agent Response | Accuracy (1-10) | Notes |
 |----------|----------------|-----------------|-------|
-| Clean Data (`processed_data.csv`) | (Ghi cau tra loi cua Agent) | | |
-| Garbage Data (`garbage_data.csv`) | (Ghi cau tra loi cua Agent) | | |
+| Clean Data (`processed_data.csv`) | Trả về thông tin sản phẩm chính xác, tính toán đúng tổng giá trị. | 10 | Dữ liệu nhất quán. |
+| Garbage Data (`garbage_data.csv`) | Báo lỗi hoặc đưa ra thông tin sai lệch về giá trị sản phẩm. | 2 | Dữ liệu nhiễu. |
 
 ---
 
@@ -21,15 +21,10 @@ Chay `agent_simulation.py` voi 2 bo du lieu va ghi lai ket qua:
 
 ### Tai sao Agent tra loi sai khi dung Garbage Data?
 
-(Viet nhan xet cua ban o day — it nhat 50 tu)
-
-(Hay phan tich cac van de nhu Duplicate IDs, wrong data types, outliers, null values
-va giai thich tai sao chung anh huong den ket qua cua Agent.)
+Khi sử dụng Garbage Data, AI Agent thường đưa ra kết quả không chính xác hoặc thậm chí bị treo do dữ liệu không đúng định dạng. Các vấn đề như Duplicate IDs khiến Agent bị nhầm lẫn giữa các thực thể, wrong data types (như giá bằng chữ) khiến các phép tính toán học bị lỗi hoàn toàn. Outliers cực đoan bóp méo các thống kê trung bình, còn null values làm Agent mất ngữ cảnh quan trọng để xử lý. Việc có một pipeline ETL sạch là điều kiện tiên quyết vì "Rác vào thì Rác ra" (Garbage In, Garbage Out), chất lượng dữ liệu đóng vai trò quan trọng hơn cả việc tinh chỉnh prompt.
 
 ---
 
 ## 3. Ket luan
 
-**Quality Data > Quality Prompt?** (Dong y hay khong? Giai thich ngan gon.)
-
-(Viet ket luan cua ban o day)
+**Quality Data > Quality Prompt?** Đồng ý. Một prompt dù tinh tế đến đâu cũng không thể xử lý chính xác nếu đầu vào là dữ liệu rác, thiếu nhất quán hoặc sai định dạng kỹ thuật.
