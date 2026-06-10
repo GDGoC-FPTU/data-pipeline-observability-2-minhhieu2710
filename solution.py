@@ -3,7 +3,7 @@
 Day 10 Lab: Build Your First Automated ETL Pipeline
 ==============================================================
 Student ID: 2A202600550
-Name: Nguyen Van A
+Name: Pham Minh Hieu
 
 Nhiem vu:
    1. Extract:   Doc du lieu tu file JSON
